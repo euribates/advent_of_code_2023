@@ -1,4 +1,4 @@
-## Advento of Code 2023 Solutiones
+## Advent of Code 2023 Solutiones
 
 Welcome to my solutiones for the [Advent of Code 2023](https://adventofcode.com/2023/) made in Python3.
 
