@@ -4,3 +4,4 @@ Welcome to my solutiones for the [Advent of Code 2023](https://adventofcode.com/
 
 - [Day 1: Trebuchet?!](./day_01/)
 - [Day 2: Cube Conundrum](./day_02/)
+- [Day 3: Gear Ratios](./day_03/)
