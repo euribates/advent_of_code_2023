@@ -1,6 +1,6 @@
-## Advento of Code 2023 Solutiones
+## Advent of Code 2023
 
-Welcome to my solutiones for the [Advent of Code 2023](https://adventofcode.com/2023/) made in Python3.
+Welcome to my solutions for the [Advent of Code 2023](https://adventofcode.com/2023/), written in Python3.
 
 - [Day 1: Trebuchet?!](./day_01/)
 - [Day 2: Cube Conundrum](./day_02/)
