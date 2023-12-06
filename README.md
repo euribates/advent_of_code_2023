@@ -7,3 +7,4 @@ Welcome to my solutions for the [Advent of Code 2023](https://adventofcode.com/2
 - [Day 3: Gear Ratios](./day_03/)
 - [Day 4: Scratchcards](./day_04/)
 - [Day 5: If You Give A Seed A Fertilizer](./day_05/)
+- [Day 6: Wait For It](./day_06/)
