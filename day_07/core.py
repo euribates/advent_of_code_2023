@@ -60,11 +60,13 @@ def expand_hand(hand, options=SORT_ORDER_WITH_JOKERS[1:]):
 
 def find_best_hand(hand):
     if 'J' in hand:
-        print('Joker in Hand!')
         sort_key = (get_value(hand), get_strength_with_jokers(hand))
         for candidate in expand_hand(hand):
-            new_key = (get_value(candidate), get_strength_with_jokers(candidate))
-            print(candidate, new_key, sort_key)
+            new_key = (
+                get_value(candidate),
+                get_strength_with_jokers(candidate),
+                )
+            # print(candidate, new_key, sort_key)
             if new_key > sort_key:
                 sort_key = new_key
                 hand = candidate
@@ -75,4 +77,3 @@ def find_best_hand(hand):
 def get_value_with_jokers(hand):
     hand = find_best_hand(hand)
     return get_value(hand)
-

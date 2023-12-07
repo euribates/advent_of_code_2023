@@ -6,14 +6,20 @@ from core import get_value, get_strength
 
 
 def load_input(filename):
-    for line in open(filename, 'r'):
-        hand, bid = line.strip().split()
-        yield get_value(hand), get_strength(hand), hand, int(bid)
+    with open(filename, 'r') as lines:
+        for line in lines:
+            hand, bid = line.strip().split()
+            yield hand, int(bid)
 
 
 def main():
     filename = sys.argv[1]
-    hands = sorted(load_input(filename))
+    hands = []
+    for hand, bid in load_input(filename):
+        value = get_value(hand)
+        strength = get_strength(hand)
+        hands.append((value, strength, hand, bid))
+    hands.sort()
     acc = 0
     for rank, (value, _strength, _hand, bid) in enumerate(hands, start=1):
         # print(_hand, value, rank, bid)

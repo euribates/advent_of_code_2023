@@ -28,7 +28,7 @@ def main():
     hands.sort()
     acc = 0
     for rank, (value, strength, hand, bid) in enumerate(hands, start=1):
-        print(rank, strength, hand, bid)
+        # print(rank, strength, hand, bid)
         acc += rank * bid
     print(f"Solution part two: {acc}")
 

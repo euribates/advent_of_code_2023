@@ -69,7 +69,8 @@ def test_find_best_hand():
     assert find_best_hand('32T3K') == '32T3K'
     assert find_best_hand('KK677') == 'KK677'
     assert find_best_hand('T55J5') == 'T5555'
-
+    assert find_best_hand('KTJJT') == 'KTTTT'
+    assert find_best_hand('QQQJA') == 'QQQQA'
 
 
 if __name__ == "__main__":
