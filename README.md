@@ -9,3 +9,4 @@ Welcome to my solutions for the [Advent of Code 2023](https://adventofcode.com/2
 - [Day 5: If You Give A Seed A Fertilizer](./day_05/)
 - [Day 6: Wait For It](./day_06/)
 - [Day 7: Camel Cards](./day_07/)
+- [Day 8: Haunted Wasteland](./day_08/)
