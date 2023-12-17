@@ -17,6 +17,12 @@ def get_options():
     parser = argparse.ArgumentParser(prog='AOC day 11')
     parser.add_argument('filename')
     parser.add_argument('-t', '--trace', action='store_true')
+    parser.add_argument(
+        '-g', '--gap',
+        action='store',
+        type=int,
+        default=2,
+        )
     return parser.parse_args()
 
 
@@ -66,7 +72,8 @@ class StarMap:
             if value == 0
             ]
 
-    def expand_universe(self):
+    def expand_universe(self, gap=2):
+        increment = gap - 1
         for x_frontier in reversed(self.get_col_expands()):
             wave = []
             for (x, y) in self.kernel:
@@ -75,11 +82,11 @@ class StarMap:
                     wave.append(star)
             for star in wave:
                 del self.kernel[star.x, star.y]
-                star.x += 1
+                star.x += increment
                 self.kernel[star.x, star.y] = star
-            print(self.stars_by_column)
-            self.stars_by_column.insert(x_frontier, 0)
-            self.width += 1
+            if increment == 1:
+                self.stars_by_column.insert(x_frontier, 0)
+            self.width += increment
         for y_frontier in reversed(self.get_row_expands()):
             wave = []
             for (x, y) in self.kernel:
@@ -88,10 +95,11 @@ class StarMap:
                     wave.append(star)
             for star in wave:
                 del self.kernel[star.x, star.y]
-                star.y += 1
+                star.y += increment
                 self.kernel[star.x, star.y] = star
-            self.stars_by_row.insert(y_frontier, 0)
-            self.height += 1
+            if increment == 1:
+                self.stars_by_row.insert(y_frontier, 0)
+            self.height += increment
 
     def is_full_empty(self, x, y):
         return self.stars_by_column[x] == 0 or self.stars_by_row[y] == 0
