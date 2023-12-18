@@ -4,7 +4,7 @@ import argparse
 
 
 def get_options():
-    parser = argparse.ArgumentParser(prog='AOC day {{ num }}')
+    parser = argparse.ArgumentParser(prog='AOC day {{ cookiecutter.num }}')
     parser.add_argument('filename')
     parser.add_argument('-t', '--trace', action='store_true')
     return parser.parse_args()
