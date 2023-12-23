@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
 from core import get_options, load_input
-from core import expand
+from core import count_valid_expansions
+
 
 def main(options):
-    data = load_input(options.filename)
-    sol = len(list(data))
-
-    for sol in expand('???.###', (1,1,3)):
-        print(sol)
-    print(f'[Day 12] Sol. part one is: {sol}')
+    acc = 0
+    for record, damaged_parts in load_input(options.filename):
+        valid_count = count_valid_expansions(record, damaged_parts)
+        print(record, valid_count)
+        acc += valid_count
+    print(f'[Day 12] Sol. part one is: {acc}')
 
 
 if __name__ == '__main__':
